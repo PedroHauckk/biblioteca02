@@ -1,0 +1,17 @@
+$result = $conn->query($query);: Nesta linha, estamos executando a query SQL $query no banco de dados por meio do objeto de conexão $conn. O resultado da query é armazenado na variável $result.
+
+if ($result->num_rows > 0) {: Aqui estamos verificando se o número de linhas retornadas pela query ($result->num_rows) é maior que zero. Isso significa que a query retornou resultados.
+
+$row = $result->fetch_assoc();: Se houver resultados, esta linha obtém a próxima linha do resultado da consulta como um array associativo e a armazena na variável $row.
+
+echo "Total de Clientes Cadastrados: " . $row["total_pessoas"];: Aqui estamos exibindo a contagem de clientes cadastrados. A mensagem "Total de Clientes Cadastrados: " é concatenada com o valor da chave "total_pessoas" do array $row, que contém o número total de clientes retornados pela consulta.
+
+} else {: Se a condição do if não for atendida, ou seja, se não houver resultados retornados pela consulta, o código dentro deste bloco else será executado.
+
+echo "0 resultados";: Aqui estamos apenas exibindo uma mensagem indicando que não foram encontrados resultados. Isso é exibido quando a condição do if não é atendida, ou seja, quando $result->num_rows é igual a zero.
+
+
+
+
+
+
